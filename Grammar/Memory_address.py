@@ -4,8 +4,8 @@
 # @Author  : JZK
 # @File    : Memory_address.py
 
-a1 = 12
-a2 = 12
+a1 = 258
+a2 = 258
 a3 = 123
 
 print(id(a1))
