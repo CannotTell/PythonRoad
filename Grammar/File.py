@@ -24,13 +24,13 @@ Python底部以字节为基本打开文件，当我们已基本方式打开文�
 FilePath = 'C:\\Users\\zhukai.jiang\\PycharmProjects\\PythonRoad\\Files\\TestFile.txt'
 
 #默认是只读模式和以字符串的方式打开
-f = open('C:\\Users\\zhukai.jiang\\PycharmProjects\\PythonRoad\\Files\\TestFile.txt','r', encoding='utf-8')
+f = open(FilePath,'r', encoding='utf-8')
 data = f.read()
 f.close()
 print(data)
 
 #以字节形势打开文件
-f = open('C:\\Users\\zhukai.jiang\\PycharmProjects\\PythonRoad\\Files\\TestFile.txt','rb')
+f = open(FilePath,'rb')
 data = f.read()
 f.close()
 print(data)
