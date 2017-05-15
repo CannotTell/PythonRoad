@@ -1,0 +1,54 @@
+<ns0:DataSet xmlns:ns0="http://WebXml.com.cn/" xmlns:ns2="urn:schemas-microsoft-com:xml-msdata" xmlns:ns3="urn:schemas-microsoft-com:xml-diffgram-v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:schema id="getDetailInfo">
+        <xs:element name="getDetailInfo" ns2:IsDataSet="true" ns2:UseCurrentLocale="true">
+            <xs:complexType>
+                <xs:choice maxOccurs="unbounded" minOccurs="0">
+                    <xs:element name="TrainDetailInfo">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element minOccurs="0" name="TrainStation" type="xs:string" />
+                                <xs:element minOccurs="0" name="ArriveTime" type="xs:string" />
+                                <xs:element minOccurs="0" name="StartTime" type="xs:string" />
+                                <xs:element minOccurs="0" name="KM" type="xs:short" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <ns3:diffgram>
+        <getDetailInfo>
+            <TrainDetailInfo ns3:hasChanges="inserted" ns3:id="TrainDetailInfo1" ns2:rowOrder="0">
+                <TrainStation test="sss">&#26477;&#24030;&#19996;&#65288;&#36710;&#27425;&#65306;G7558&#65289;_test str</TrainStation>
+                <ArriveTime />
+                <StartTime>07:08:00</StartTime>
+                <KM>0</KM>
+            </TrainDetailInfo>
+            <TrainDetailInfo ns3:hasChanges="inserted" ns3:id="TrainDetailInfo2" ns2:rowOrder="1">
+                <TrainStation test="sss">&#28023;&#23425;&#35199;_test str</TrainStation>
+                <ArriveTime>07:21:00</ArriveTime>
+                <StartTime>07:23:00</StartTime>
+                <KM>26</KM>
+            </TrainDetailInfo>
+            <TrainDetailInfo ns3:hasChanges="inserted" ns3:id="TrainDetailInfo3" ns2:rowOrder="2">
+                <TrainStation test="sss">&#22025;&#20852;&#21335;_test str</TrainStation>
+                <ArriveTime>07:38:00</ArriveTime>
+                <StartTime>07:40:00</StartTime>
+                <KM>75</KM>
+            </TrainDetailInfo>
+            <TrainDetailInfo ns3:hasChanges="inserted" ns3:id="TrainDetailInfo4" ns2:rowOrder="3">
+                <TrainStation test="sss">&#22025;&#21892;&#21335;_test str</TrainStation>
+                <ArriveTime>07:49:00</ArriveTime>
+                <StartTime>07:51:00</StartTime>
+                <KM>92</KM>
+            </TrainDetailInfo>
+            <TrainDetailInfo ns3:hasChanges="inserted" ns3:id="TrainDetailInfo5" ns2:rowOrder="4">
+                <TrainStation test="sss">&#19978;&#28023;&#34425;&#26725;_test str</TrainStation>
+                <ArriveTime>08:14:00</ArriveTime>
+                <StartTime />
+                <KM>159</KM>
+            </TrainDetailInfo>
+        </getDetailInfo>
+    </ns3:diffgram>
+</ns0:DataSet>

@@ -23,3 +23,12 @@ from xml.etree import ElementTree as ET
 
 node = ET.XML(result)
 print(node.text)
+
+
+r = requests.get('http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?TrainCode=G7558&UserID=')
+result = r.text
+
+# 解析XML格式内容
+root = ET.XML(result)
+for node in root.iter('TrainDetailInfo'):
+    print(node.find('TrainStation').text,node.find('StartTime').text,node.tag,node.attrib)
