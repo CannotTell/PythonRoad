@@ -14,7 +14,7 @@ def sendEmail(account, subject, message):
     from email.utils import formataddr
     ret = True
     localEmail = '1483687801@qq.com'
-    password = 'cgyzdswdmx'
+    password = 'wprdfrnxqocsjcdi'
     server = smtplib.SMTP('smtp.qq.com', 465)
 
     try:

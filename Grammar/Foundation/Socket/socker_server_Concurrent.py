@@ -4,8 +4,8 @@
 # @Author  : JZK
 # @File    : socker_server_Concurrent.py
 '''
-Socket并发处理
-
+Socket真并发处理
+select/epoll + socket + 多线程
 '''
 import socketserver
 #必须继承socketserver.BaseRequestHandler，实现handle方法
