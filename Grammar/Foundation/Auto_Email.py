@@ -4,13 +4,13 @@
 # @Author  : JZK
 # @File    : Auto_Email.py
 
-#from email.mime.text import MIMEText
 from email.header import Header
 from smtplib import SMTP_SSL
 from email import encoders
 from email.message import Message
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 qq_number = '1483687801'
 receiver='eric.c.jzk@outlook.com'
@@ -31,7 +31,9 @@ def Send_Email(account_to, subject, mail_content):
     themsg['Subject'] = Header(subject, 'utf-8')
     themsg['To'] = account_to
     themsg['From'] = sender_mail
-    themsg.preamble = 'I am not using a MIME-aware mail reader.\n'
+    text = MIMEText(mail_content, 'plain', 'utf-8')
+    themsg.attach(text)
+    #themsg.preamble = mail_content
 
     with open('shadowsocks.zip', 'rb') as zf:
 
@@ -52,7 +54,7 @@ def Send_Email(account_to, subject, mail_content):
     # att2["Content-Disposition"] = 'attachment; filename="shadowsocks.zip"'
     # msg.attach(att2)
 
-    smtp.sendmail(sender_mail, account_to, msg.as_string())
+    smtp.sendmail(sender_mail, account_to, bytes(themsg, encoding='utf-8'))
     smtp.quit()
 
 
