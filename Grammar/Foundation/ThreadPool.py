@@ -19,7 +19,9 @@ if __name__ == '__main__':
     p = Pool(5)
 
     for i in range(10):
-        p.apply_async(func=myFun, args=(i,), callback=end_call)
+        p.apply_async(func=myFun, args=(i,), callback=end_call)#并发执行
+
+    #    p.apply(func=myFun, args=(i,)) #排队执行
 
     print('end')
     p.close()
