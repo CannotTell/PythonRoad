@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+}
+ul{
+    list-style: none;
+    margin-top: 0;
+}
+.clearfix:after{
+    content: "111";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+
+.pg_header{
+    background-color: #2459a2;
+    height: 44px;
+
+}
+
+.head_content{
+    margin: 0 auto;
+    width: 1016px;
+
+}
+.head_content .logo{
+    float: left;
+    margin-top: 10px;
+}
+.head_content .nav{
+    float: left;
+    line-height: 44px;
+}
+
+.nav ul li{
+    float: left;
+
+}
+.nav ul li a{
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav ul li a:hover{
+    background-color: red;
+}
+
+/*图片覆盖*/
+.touch{
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+    position: relative;
+}
+.touch:hover .touch_content{
+    visibility: visible;
+}
+
+.touch .touch_content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    opacity: 0.6;
+    visibility: hidden;
+}
+
+/*返回键绝对位置*/
+.pg_body{
+    height: 2000px;
+    background-color: gray;
+}
+
+.pg_body .backButton{
+    position: fixed; /*固定在屏幕的某个位置*/
+    right: 10px;
+    bottom: 10px;
+
+}
