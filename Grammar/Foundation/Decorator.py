@@ -4,48 +4,41 @@
 # @Author  : JZK
 # @File    : Decorator.py
 
-'''
+"""
 装饰器
-'''
-
-#最牛B的无视参数个数的
-def niubi(func):
-    def inner(*arg, **kwargs):
-        print('before')
-        ret = func(*arg, **kwargs)
-        print('after')
-        return ret
-    return inner
-
-#无参数装饰器
-def outer(func):
-    def inner():
-        print('sb')
-        ret = func()
-        return ret
-    return inner
-@niubi
-def index():
-    print('xx')
-    return True
+"""
 
 
-#有参数装饰器
-def hahah(func):
-    def inner(a, b):
-        print('before')
-        ret = func(a,b)
-        print('after')
-        return ret
-    return inner
-@niubi
-def second(a,b):
-    print('a + b')
-    return a + b
+# 在my_func函数之前和之后加处理， 前提是record_log本身没有参数
+def record_log(func):
+    def wrapper(*arg, **args):
+        print('do log before')
+        func(*arg, **args)
+        print('do log after')
+    return wrapper
 
 
+# 如果record_log本身也有参数的写法
+def record_log2(type):
+    def decorator(func):
+        def wrapper(*arg, **args):
+            print('do log before with {}'.format(type))
+            func(*arg, **args)
+            print('do log after {}'.format(type))
+        return wrapper
+    return decorator
 
 
-x = second(1,2)
-index()
-print(x)
+@ record_log2('test')
+def my_func2(x, y):
+    print('my func {0}-{1}'.format(x, y))
+
+
+@record_log
+def my_func(x, y):
+    print('my func {0}-{1}'.format(x, y))
+
+
+if __name__ == '__main__':
+    my_func(1, 2)
+    my_func2(1, 2)

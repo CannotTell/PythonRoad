@@ -5,6 +5,7 @@
 # @File    : main.py
 
 
+from copy import deepcopy
 
 #规定输入规则，模块名/函数名
 url = input('Input URL:')
