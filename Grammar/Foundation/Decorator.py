@@ -9,8 +9,17 @@
 """
 
 
+# Python 里函数作为参数传递
+def arg():
+    print('arg func')
+
+
+def x(func):
+    func()
+
+
 # 在my_func函数之前和之后加处理， 前提是record_log本身没有参数
-def record_log(func):
+def record_log1(func):
     def wrapper(*arg, **args):
         print('do log before')
         func(*arg, **args)
@@ -24,7 +33,7 @@ def record_log2(type):
         def wrapper(*arg, **args):
             print('do log before with {}'.format(type))
             func(*arg, **args)
-            print('do log after {}'.format(type))
+            print('do log after with {}'.format(type))
         return wrapper
     return decorator
 
@@ -34,7 +43,7 @@ def my_func2(x, y):
     print('my func {0}-{1}'.format(x, y))
 
 
-@record_log
+@record_log1
 def my_func(x, y):
     print('my func {0}-{1}'.format(x, y))
 
@@ -42,3 +51,4 @@ def my_func(x, y):
 if __name__ == '__main__':
     my_func(1, 2)
     my_func2(1, 2)
+    # x(arg)
