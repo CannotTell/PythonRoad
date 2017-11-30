@@ -27,6 +27,6 @@ if __name__ == '__main__':
 
     print(a1.a)
     print(a2.a)
-
+    print(type(a1))
     print(id(a1))
     print(id(a2))
