@@ -8,7 +8,16 @@ from dateutil.relativedelta import *
 import datetime
 
 
-Now = datetime.datetime(2017, 8, 31, 8, 12, 34, 790945)
-last = Now + relativedelta(months=+1)
-print(Now.strftime("%Y-%m-%d"))
-print(last.strftime("%Y-%m-%d"))
+# Now = datetime.datetime(2017, 8, 31, 8, 12, 34, 790945)
+# last = Now + relativedelta(months=+1)
+# print(Now.strftime("%Y-%m-%d"))
+# print(last.strftime("%Y-%m-%d"))
+
+def extend_list(val, list=[]):
+    list.append(val)
+    return list
+
+list1 = extend_list(123, [])
+
+
+print(list1)

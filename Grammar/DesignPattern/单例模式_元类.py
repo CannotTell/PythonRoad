@@ -34,3 +34,4 @@ if __name__ == '__main__':
     print(b.i)
     print(type(a))
     print(a is b)
+    print(type(A))
